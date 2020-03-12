@@ -3,35 +3,38 @@ import { StyleSheet, Text, View,TextInput, Button } from 'react-native';
 
 export default function App() {
   return (
-    <View style={{
-      
-      }}>
+    
+    
     <View style={{
       backgroundColor:'black',
-      
-      width:380,
-      height:900,
       justifyContent:'center',
-      alignContent:'center'
+    
+      alignContent:'center',  width:'100%',
+      height:'100%'
 
 
 
     }}>
-      <Button title="Galaga"
-      color='red'
-       />
       
+      <Text style={{
+          textAlign:'center',
+          fontSize:'50',
+          color:'red'
+
+         }}>Galaga</Text> 
+        
       
       <Button title="Start"
+      color='blue'
        />
       
-</View>
+      
 <View/>
+
 </View>
 
-  );
-}
 
-const styles = StyleSheet.create({
-  
-});
+
+
+
+)};
