@@ -1,44 +1,64 @@
 import React,{ Component }  from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import { View, StyleSheet, StatusBar,body} from 'react-native';
 import {GameEngine} from 'react-native-game-engine';//game engine
 import Matter from 'matter-js'//physics engine
 import Constants from './Constants';
 import Ship from './Ship';
-export default class Game extends React.Component{
+import Physics from './Physics'
+export default class App extends Component {
     constructor(props){
         super(props);
-        this.GameEngine=null;
-        this.entities=this.setUpWorld
 
-    }
-    setUpWorld = () => {
-         let engine =Matter.Engine.create({enableSleeping:false});
-         let world =engine.world;
+        this.state = {
+            running: true
+        };
 
-         let ship = Matter.Bodies.rectangle(Constants.MAX_WIDTH/4,Constants.MAX_HEIGHT/20,50,50);
-          Matter.world.add(world,[ship]);
-          return{
-              physics:{engine:engine,world:world},
-              Ship:{body:Ship,size:[50,50],color:'red',renderer:Ship}
-            }
+        this.gameEngine = null;
+
+        this.entities = this.setupWorld();
     }
-    
-    render(){
-        return(
-            <View>
-               <GameEngine
-               ref={(ref)=>{this.GameEngine =ref;}}
-               style={styles.gameContainer}
-               entities={this.entities}
-               /> 
-                </View>
+
+    setupWorld = () => {
+        let engine = Matter.Engine.create({ enableSleeping: false });
+        let world = engine.world;
+
+        let Ship = Matter.Bodies.rectangle( Constants.MAX_WIDTH / 4, Constants.MAX_HEIGHT / 2);
+
+        Matter.World.add(world, [Ship]);
+
+
+        return {
+            physics: { engine: engine, world: world },
+            Ship: { body:Ship,size: [50, 50], color: 'red', renderer: Ship},
+        }
+    }
+
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <GameEngine
+                    ref={(ref) => { this.gameEngine = ref; }}
+                    style={styles.gameContainer}
+                    running={this.state.running}
+                    entities={this.entities}>
+                    <StatusBar hidden={false} />
+                </GameEngine>
+            </View>
         );
     }
 }
 
-const styles=StyleSheet.create({
- container:{
-     flex:1,
-     backgroundColor:'black'
- }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    gameContainer: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+    },
 });

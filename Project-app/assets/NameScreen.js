@@ -10,7 +10,7 @@ export default class Likes extends React.Component{
             
             <TextInput
               style={styles.input}
-              placeholder="Iniciar sesion"
+              placeholder=" Usuario"
               placeholderTextColor='red'
               color='red'
 
@@ -18,7 +18,7 @@ export default class Likes extends React.Component{
             />
             <TextInput
               style={styles.input}
-              placeholder="Registrarse"
+              placeholder="Contraseña"
               placeholderTextColor='red'
               color='red'
             />
