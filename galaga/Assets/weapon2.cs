@@ -6,19 +6,21 @@ public class weapon2 : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject bulletprafab;
-    
-   
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if (Random.Range(0.0f,10.0f) <= 0.3)
-        {
-            Shoot();
-        }
+        StartCoroutine(shootTime());
+
     }
     void Shoot()
     {
         Instantiate(bulletprafab, FirePoint.position, FirePoint.rotation);
+    }
+    IEnumerator shootTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(0.0f, 10.0f));
+            Shoot();
+        }
     }
 }
