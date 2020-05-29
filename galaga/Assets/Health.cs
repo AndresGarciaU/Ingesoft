@@ -18,15 +18,15 @@ public class Health : MonoBehaviour
     
     public void TakeDamage(int Damage)
     {
+        if (currentHealth == 0)
+        {
+            SceneManager.LoadScene("Main menu");
+            Destroy(gameObject);
+        }
         currentHealth -= Damage;
 
         healthbar.SetHealth(currentHealth);
     }
-    void Die()
-    {
-        if (currentHealth <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
+  
+       
     }
-}
