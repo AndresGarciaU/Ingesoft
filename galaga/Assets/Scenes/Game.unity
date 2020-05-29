@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 178121613}
   - component: {fileID: 178121615}
   - component: {fileID: 178121614}
+  - component: {fileID: 178121616}
   m_Layer: 5
   m_Name: Puntuacion
   m_TagString: Untagged
@@ -298,6 +299,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178121612}
   m_CullTransparentMesh: 0
+--- !u!114 &178121616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178121612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f534376fb49d83d4d984b64b16049109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puntuacion: {fileID: 178121614}
 --- !u!1 &286966303
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f534376fb49d83d4d984b64b16049109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Puntuacion: {fileID: 0}
 --- !u!1 &507471052
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,8 +744,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -237.4, y: 179.26}
-  m_SizeDelta: {x: 208.08514, y: 12.491856}
+  m_AnchoredPosition: {x: -193, y: 174}
+  m_SizeDelta: {x: 208.08514, y: 15.333744}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799954309
 MonoBehaviour:
