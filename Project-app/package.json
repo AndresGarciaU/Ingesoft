@@ -16,6 +16,7 @@
     "react-dom": "~16.9.0",
     "react-game-engine": "^1.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.0.tar.gz",
+    "react-native-datepicker": "^1.7.2",
     "react-native-game-engine": "^1.1.1",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-safe-area-context": "^0.7.3",
@@ -25,8 +26,9 @@
     "react-navigation-stack": "^2.3.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
     "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "webpack": "^4.43.0"
   },
   "private": true
 }
